@@ -43,7 +43,7 @@ Download.propTypes = {
 const Geography = ({ towns, cog }) => (
     <FooterRow heading='Geography'>
         <Typography>
-            Note that in order to include Community Wellbeing Survey results for small towns, values shown here are based on a model rather than direct measurements. Contact DataHaven for more information about the methodology used.
+            Note that in order to include Community Wellbeing Survey results for small towns, values shown here are based on a model that incorporates direct measurements. Contact DataHaven for more information about the methodology used.
         </Typography>
         {towns && <Typography>
             {`${cog} is made up of the towns of ${towns}.`}

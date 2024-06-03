@@ -125,7 +125,7 @@ function App({ scheme }) {
     return (
         <div className='App'>
             <Container fixed>
-                <Header heading='Connecticut Town Profiles' />
+                <Header heading='Connecticut Town Data Viewer' />
 
                 <ControlPanel controlGrps={controlProps} ncol={3} />
 
