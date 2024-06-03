@@ -74,6 +74,7 @@ const getCustomCols = (field, type, cogs) => {
     const opts = {
         filterOperators: typeOpts,
         filterable: isFilterable,
+        minWidth: 100,
         ...stdOpts[field]
     };
     return opts || {};
