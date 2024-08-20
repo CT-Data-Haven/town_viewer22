@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { purple, indigo } from '@mui/material/colors';
 import CssBaseline from '@mui/material/CssBaseline';
 import { schemeBuPu, } from 'd3-scale-chromatic';
 
@@ -19,8 +20,7 @@ import 'leaflet/dist/leaflet.css';
 const rootElement = document.getElementById('root');
 
 const scheme = schemeBuPu;
-const palette = scheme[5];
-const hilite = palette[3];
+// const hilite = palette[3];
 
 const theme = createTheme({
     components: {
@@ -36,7 +36,7 @@ const theme = createTheme({
         },
         MuiLink: {
             defaultProps: {
-                fontWeight: 700,
+                fontWeight: 600,
             },
         },
     },
@@ -44,8 +44,8 @@ const theme = createTheme({
         fontFamily: 'Barlow, sans-serif',
         fontWeightBold: 600,
         h1: {
-            fontWeight: 700,
-            fontSize: '1.6rem',
+            fontWeight: 500,
+            fontSize: '2rem',
             marginTop: '1rem',
             marginBottom: '1rem',
         },
@@ -54,6 +54,10 @@ const theme = createTheme({
             fontSize: '1.2rem',
         },
         h3: {
+            fontWeight: 600,
+            fontSize: '1.1rem',
+        },
+        h4: {
             fontWeight: 600,
             fontSize: '1.05rem',
         },
@@ -67,10 +71,12 @@ const theme = createTheme({
     },
     palette: {
         primary: {
-            main: hilite,
+            // main: hilite,
+            main: purple[500],
         },
         secondary: {
-            main: palette[4],
+            // main: palette[4],
+            main: indigo['A200'],
         },
         background: {
             default: '#fcfcfc',

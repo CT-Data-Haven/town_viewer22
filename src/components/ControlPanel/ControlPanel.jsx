@@ -51,7 +51,7 @@ const ControlRow = ({ controls, ncol }) => (
     )
 );
 
-ControlRow.PropTypes = {
+ControlRow.propTypes = {
     controls: PropTypes.arrayOf(PropTypes.object).isRequired,
     ncol: PropTypes.number.isRequired,
 };

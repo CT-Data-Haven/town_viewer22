@@ -38,7 +38,7 @@ const VizPanel = ({
                 <TabList
                     onChange={viewChangeHandler}
                     aria-label="Tabs to change visualization type"
-                    textColor="secondary"
+                    // textColor="secondary"
                     selectionFollowsFocus
                 >
                     {views.map((v) => (
