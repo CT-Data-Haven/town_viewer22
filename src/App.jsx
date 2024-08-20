@@ -39,6 +39,8 @@ import fullData from './data/town_wide_2022.json';
 import fullNotes from './data/notes.json';
 import meta from './data/indicators.json';
 import geoMeta from './data/town_cog_xwalk.json';
+// probably move dictionary into notes json
+import dictionary from './data/dictionary.json';
 
 // bespoke components
 import Row from './components/Layout/Row/Row';
@@ -49,7 +51,10 @@ import VizPanel from './components/VizPanel/VizPanel';
 import Footer from './components/Layout/Footer/Footer';
 import Header from './components/Layout/Header/Header';
 
+// other assets
 import shp from './data/shapes/towns_topo.json';
+import Logo from './assets/logo.svg?react';
+import { ReactComponent as GuideMarkdown } from './data/user_guide.md';
 
 function App({ scheme }) {
     const theme = useTheme();
@@ -125,7 +130,12 @@ function App({ scheme }) {
     return (
         <div className='App'>
             <Container fixed>
-                <Header heading='Connecticut Town Data Viewer' />
+
+                <Header
+                    heading='Connecticut Town Data Viewer'
+                    Logo={Logo}
+                    Markdown={GuideMarkdown}
+                />
 
                 <ControlPanel controlGrps={controlProps} ncol={3} />
 
@@ -174,6 +184,7 @@ function App({ scheme }) {
                     csvFn={'2022_town_acs_health_cws_distro.csv'}
                     towns={getCogTowns(cogRef, geoMeta.xwalk)}
                     cog={geoMeta.cogs[cogRef]}
+                    dictionary={dictionary}
                     {...notes}
                 />
             </Container>
