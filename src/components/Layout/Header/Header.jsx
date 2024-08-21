@@ -9,7 +9,6 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import { blueGrey } from '@mui/material/colors';
 
 const InfoBox = ({ heading, children }) => (
     <Accordion
@@ -64,8 +63,12 @@ InfoBox.propTypes = {
     children: PropTypes.node,
 };
 
-const Header = ({ heading, Logo, Markdown }) => (
-    <Box sx={{ p: 0 }}>
+const Header = ({ heading, Logo, Markdown, logoColor }) => (
+    <Box sx={{ 
+        p: 0,
+        mb: 2,
+        mx: 1,
+    }}>
         <AppBar
             position='static'
             color='transparent'
@@ -73,7 +76,7 @@ const Header = ({ heading, Logo, Markdown }) => (
             sx={{
                 mb: 2,
                 '& .MuiToolbar-root': {
-                    px: 1,
+                    px: 0,
                 }
             }}
         >
@@ -88,7 +91,7 @@ const Header = ({ heading, Logo, Markdown }) => (
                         height: '1.6rem',
                         width: 'auto',
                         flexShrink: 2,
-                        fill: blueGrey[600],
+                        fill: logoColor,
                     }}
                 />
             </Toolbar>
@@ -104,6 +107,7 @@ Header.propTypes = {
     heading: PropTypes.string,
     Logo: PropTypes.elementType,
     Markdown: PropTypes.elementType,
+    logoColor: PropTypes.string,
 };
 
 export default Header;

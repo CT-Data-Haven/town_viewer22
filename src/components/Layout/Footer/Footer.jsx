@@ -109,10 +109,10 @@ Source.propTypes = {
 /*****************
  * // DICTIONARY *
  *****************/
-const Dictionary = ({ definitions }) => (
+const Dictionary = ({ definitions, }) => (
     <FooterRow heading='Definitions of terms'>
         {definitions.map((section, i) => (
-            <DictionarySection key={i} {...section} i={i} />
+            <DictionarySection key={i} {...section} i={i}  />
         ))}
     </FooterRow>
 );
@@ -121,7 +121,7 @@ Dictionary.propTypes = {
     definitions: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
-const DictionarySection = ({ source, variables, i }) => (
+const DictionarySection = ({ source, variables, i, }) => (
     <Accordion
         disableGutters
         elevation={0}
@@ -131,12 +131,12 @@ const DictionarySection = ({ source, variables, i }) => (
             id={`def-section-header-${i}`}
             expandIcon={<ExpandMoreIcon />}
             sx={{
-                backgroundColor: 'rgba(0, 0, 0, 0.05)',
                 '& .MuiAccordionSummary-content': {
                     margin: '4px 0',
                 },
             }}
             size='small'
+            variant='filled'
         >
             <Typography variant='h4'>{source}</Typography>
         </AccordionSummary>

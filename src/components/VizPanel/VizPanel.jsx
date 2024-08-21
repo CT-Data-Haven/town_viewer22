@@ -30,7 +30,7 @@ const VizPanel = ({
 }) => {
     const panelProps = {
         minHeight: 200,
-        p: 2,
+        p: '10px',
     };
     return (
         <Panel heading={title}>

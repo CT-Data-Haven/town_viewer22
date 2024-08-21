@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { purple, indigo } from '@mui/material/colors';
+import { createTheme, ThemeProvider, alpha, } from '@mui/material/styles';
+import { purple, indigo, } from '@mui/material/colors';
 import CssBaseline from '@mui/material/CssBaseline';
 import { schemeBuPu, } from 'd3-scale-chromatic';
 
@@ -37,8 +37,19 @@ const theme = createTheme({
         MuiLink: {
             defaultProps: {
                 fontWeight: 600,
+                color: 'secondary',
             },
         },
+        MuiAccordionSummary: {
+            variants: [
+                {
+                    props: { variant: 'filled' },
+                    style: {
+                        backgroundColor: alpha(indigo[50], 0.8),
+                    }
+                }
+            ]
+        }
     },
     typography: {
         fontFamily: 'Barlow, sans-serif',
@@ -50,15 +61,15 @@ const theme = createTheme({
             marginBottom: '1rem',
         },
         h2: {
-            fontWeight: 600,
+            fontWeight: 500,
             fontSize: '1.2rem',
         },
         h3: {
-            fontWeight: 600,
+            fontWeight: 500,
             fontSize: '1.1rem',
         },
         h4: {
-            fontWeight: 600,
+            fontWeight: 500,
             fontSize: '1.05rem',
         },
         body1: {
@@ -70,13 +81,19 @@ const theme = createTheme({
         }
     },
     palette: {
-        primary: {
-            // main: hilite,
-            main: purple[500],
-        },
+        // primary: {
+        //     main: purple,
+        // },
+        // secondary: {
+        //     main: secondary,
+        // },
+        primary: purple,
         secondary: {
-            // main: palette[4],
-            main: indigo['A200'],
+            main: indigo['A400'],
+            light: indigo[400],
+            dark: indigo[800],
+            muted: '#6e7397',
+            lightest: indigo[50],
         },
         background: {
             default: '#fcfcfc',

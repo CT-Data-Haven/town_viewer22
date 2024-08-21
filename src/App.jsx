@@ -135,6 +135,7 @@ function App({ scheme }) {
                     heading='Connecticut Town Data Viewer'
                     Logo={Logo}
                     Markdown={GuideMarkdown}
+                    logoColor={theme.palette.secondary.muted}
                 />
 
                 <ControlPanel controlGrps={controlProps} ncol={3} />

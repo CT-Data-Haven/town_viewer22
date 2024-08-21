@@ -1,10 +1,14 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 1rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
 .custom-tip {
-  font-family: 'Barlow Semi Condensed', 'sans-serif';
-  font-size: 13px;
- }
+    font-family: 'Barlow Semi Condensed', 'sans-serif';
+    font-size: 13px;
+}
+
+div.leaflet-control-attribution a {
+    color: #283593;
+}
