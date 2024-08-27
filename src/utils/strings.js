@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import { formatLocale } from 'd3-format';
+import parse from 'html-react-parser';
 
 // convert snakecase to title case
 export const titleCase = (text) => {
@@ -54,4 +55,10 @@ export const wordsAnd = (x) => {
 
 export const abbreviate = (max) => {
     return (x) => abbr(x, max);
+};
+
+export const italicize = (x) => {
+    x = _.replace(x, '(', '<em>(');
+    x = _.replace(x, ')', ')</em>');
+    return parse(x);
 };

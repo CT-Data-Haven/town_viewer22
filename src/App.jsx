@@ -22,6 +22,7 @@ import {
     makeChoroScale,
     makeTooltip,
     findLocation,
+    italicize,
 } from './utils';
 
 // library components
@@ -186,6 +187,7 @@ function App({ scheme }) {
                     towns={getCogTowns(cogRef, geoMeta.xwalk)}
                     cog={geoMeta.cogs[cogRef]}
                     dictionary={dictionary}
+                    format={italicize}
                     {...notes}
                 />
             </Container>
